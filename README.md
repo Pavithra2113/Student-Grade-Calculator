@@ -1,53 +1,30 @@
-README
-🤖 AI Portfolio Prototype
+# Student Grade Calculator
 
-A simple AI-based portfolio prototype that analyzes a user's resume and provides a resume score in percentage.
+name = input("Enter Student Name: ")
 
-📌 About the Project
+marks = []
+subjects = ["Maths", "Science", "English", "Computer", "Social"]
 
-The AI Portfolio Prototype is designed to give users a quick idea of how well their resume is prepared. The user uploads or provides their resume, and the system analyzes it and displays a percentage score.
+for subject in subjects:
+    mark = float(input(f"Enter {subject} mark: "))
+    marks.append(mark)
 
-This project demonstrates how AI can be used to provide simple and useful feedback for improving a resume.
+total = sum(marks)
+average = total / len(marks)
 
-✨ Features
+if average >= 90:
+    grade = "A+"
+elif average >= 80:
+    grade = "A"
+elif average >= 70:
+    grade = "B"
+elif average >= 60:
+    grade = "C"
+else:
+    grade = "D"
 
-📄 Resume analysis
-📊 Resume score in percentage
-🤖 AI-based evaluation
-💡 Simple and user-friendly interface
-⚡ Quick results
-🛠️ Technologies Used
-
-Python
-Streamlit
-Artificial Intelligence
-🚀 How to Run
-
-Clone the repository
-git clone https://github.com/your-username/AI-Portfolio-Prototype.git
-
-Open the project folder
-cd AI-Portfolio-Prototype
-
-Install the required packages
-pip install -r requirements.txt
-
-Run the application
-streamlit run app.py
-
-🔄 Working Process
-
-Upload / Enter Resume ↓ Resume Analysis ↓ AI Evaluation ↓ Resume Score (%)
-
-🎯 Objective
-
-The main objective of this project is to provide users with a simple way to evaluate their resume and understand its overall quality through a percentage score.
-
-🔮 Future Enhancements
-
-Detailed resume improvement suggestions
-Skill gap analysis
-ATS compatibility score
-Resume keyword analysis
-Personalized recommendations
-Job-role-based resume evaluation# Student-Grade-Calculator
+print("\n----- RESULT -----")
+print("Name:", name)
+print("Total:", total)
+print("Average:", round(average,2))
+print("Grade:", grade)
